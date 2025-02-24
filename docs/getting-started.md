@@ -11,7 +11,7 @@ To begin using our system, reach out to us for assistance with setting up your A
 ### Steps
   - Create [Access Token](#authentication) to make API calls
   - Configure [Client SDK](#client-sdk) to work with with API
-  - Configure [Webhooks](/packages/webhooks) to receive events about requiered updates
+  - Configure [Webhooks](/apis/webhooks) to receive events about requiered updates
 
 
 ## Authentication
