@@ -51,7 +51,7 @@ flowchart
   ```
 
 ### Webhooks Integration
-  - Reward data is automatically sent via [webhooks](/packages/webhooks), keeping your system updated in real time.
+  - Reward data is automatically sent via [webhooks](/apis/webhooks), keeping your system updated in real time.
 
 ### After processing rewards on your side:
     * **Accept Rewards**: Notify us using [RewardService#Accept](https://buf.build/toffeecard/toffee/docs/main:reward.v1#reward.v1.RewardService.Accept) to confirm the reward has been applied.
