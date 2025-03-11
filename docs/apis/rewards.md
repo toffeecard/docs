@@ -17,11 +17,13 @@ flowchart
     reward_received[Reward data received and processed]
     reward_accept[Accept reward]
     reward_decline[Decline reward]
+    reward_claim[Claim reward]
 
     click reward_api href "#listing-rewards"
     click webhook_event href "#webhooks-integration"
     click reward_accept href "#after-processing-rewards-on-your-side"
     click reward_decline href "#after-processing-rewards-on-your-side"
+    click reward_claim href "#after-processing-rewards-on-your-side"
 
     action --> reward
     reward --> webhook_event
@@ -30,6 +32,7 @@ flowchart
     reward_api --> reward_received
     reward_received --> reward_accept
     reward_received --> reward_decline
+    reward_accept --> reward_claim
 ```
 
 
@@ -61,6 +64,7 @@ flowchart
       rewardId: reward.id
     });
     ```
+
     * **Decline Rewards**: Use [RewardService#Decline](https://buf.build/toffeecard/toffee/docs/main:reward.v1#reward.v1.RewardService.Decline) if the reward cannot be applied due to errors or other reasons.
       + Please discuss the issue with us to resolve any problems.
 
@@ -68,5 +72,13 @@ flowchart
     await rewardService.decline({
       rewardId: reward.id,
       reason: "Any reason"
+    });
+    ```
+
+    * **Claim Rewards**: Use [RewardService#Claim](https://buf.build/toffeecard/toffee/docs/main:reward.v1#reward.v1.RewardService.Claim) to mark the reward as claimed.
+
+    ```typescript
+    await rewardService.claim({
+      rewardId: reward.id
     });
     ```
